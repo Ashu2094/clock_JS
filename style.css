@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* The box-sizing property can be used to adjust this behavior:
+
+content-box gives you the default CSS box-sizing behavior. If you set an element's width to 100 pixels, then the element's content box will be 100 pixels wide, and the width of any border or padding will be added to the final rendered width, making the element wider than 100px.
+border-box tells the browser to account for any border and padding in the values you specify for an element's width and height. If you set an element's width to 100 pixels, that 100 pixels will include any border or padding you added, and the content box will shrink to absorb that extra width. This typically makes it much easier to size elements. box-sizing: border-box is the default styling that browsers use for the <table>, <select>, and <button> elements, and for <input> elements whose type is radio, checkbox, reset, button, submit, color, or search. */
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #091921;
+}
+
+.clock{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(Projects.png);
+
+    
+    background-size: cover;
+    /* Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges	 */
+    border: 4px solid #091921;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(255 , 255 , 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255,0.05),
+    0 15px 15px rgba(0,0,0,0.3),
+    inset 0 15px 15px rgba(0,0,0,0.3);
+}
+
+.clock::before{
+content: '';
+position: absolute;
+width: 15px;
+height:15px;
+background: #fff;
+border-radius: 50%;
+z-index: 1000;
+}
+/* ::before creates a pseudo-element that is the first child of the selected element. It is often used to add cosmetic content to an element with the content property. It is inline by default. */
+
+.clock .hour , .clock .minute , .clock .second{
+    position: absolute;
+}
+
+.clock .hour , .hr{
+width: 160px;
+height: 160px;
+}
+.clock .minute , .min{
+width: 190px;
+height: 190px;
+}
+.clock .second , .sec{
+width: 230px;
+height: 230px;
+}
+
+ .hr, .min, .sec{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+    /* align-items: center; */
+} 
+
+ .hr::before{
+content: '';
+position: absolute;
+width: 8px;
+height: 80px;
+background: #ff105e;
+z-index: 10;
+border-radius: 6px 6px 0 0;
+} 
+
+.min::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: #fff;
+    z-index:11;
+    border-radius: 6px 6px 0 0;
+    } 
+.sec::before{
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 150px;
+        background: rgb(71, 255, 5);
+        z-index:12;
+        border-radius: 6px 6px 0 0;
+     } 
